@@ -68,4 +68,17 @@ texture_normal = ExtResource( 5 )
 expand = true
 stretch_mode = 5
 
+[node name="Pause" type="Button" parent="."]
+margin_left = 730.0
+margin_top = 492.0
+margin_right = 981.0
+margin_bottom = 562.0
+rect_min_size = Vector2( 25, 70 )
+custom_constants/hseparation = 60
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "Pause"
+script = ExtResource( 3 )
+
 [connection signal="pressed" from="Back" to="Back" method="_on_Back_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]

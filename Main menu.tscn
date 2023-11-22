@@ -58,10 +58,10 @@ text = "Math Game"
 align = 1
 
 [node name="start" type="Button" parent="TextureRect"]
-margin_left = 386.5
-margin_top = 181.5
-margin_right = 637.5
-margin_bottom = 251.5
+margin_left = 388.0
+margin_top = 200.0
+margin_right = 639.0
+margin_bottom = 270.0
 rect_min_size = Vector2( 25, 70 )
 custom_constants/hseparation = 60
 custom_fonts/font = SubResource( 4 )
@@ -69,10 +69,10 @@ custom_styles/normal = SubResource( 1 )
 text = "START"
 
 [node name="Exit" type="Button" parent="TextureRect"]
-margin_left = 391.0
-margin_top = 315.0
-margin_right = 642.0
-margin_bottom = 385.0
+margin_left = 392.0
+margin_top = 346.0
+margin_right = 643.0
+margin_bottom = 416.0
 rect_min_size = Vector2( 25, 70 )
 custom_constants/hseparation = 60
 custom_fonts/font = SubResource( 4 )
