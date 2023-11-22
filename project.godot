@@ -12,6 +12,8 @@ config_version=4
 
 config/name="MainMenu"
 run/main_scene="res://Main menu.tscn"
+boot_splash/image="res://math games.png"
+boot_splash/bg_color=Color( 0.694118, 0.937255, 0.921569, 1 )
 config/icon="res://icon.png"
 
 [display]
