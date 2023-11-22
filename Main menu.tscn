@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://oldPaper.png" type="Texture" id=1]
+[ext_resource path="res://roboto/Roboto-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://roboto/Roboto-BoldItalic.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Main menu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 80
+outline_size = 8
+outline_color = Color( 0.858824, 0.713726, 0.886275, 1 )
+extra_spacing_top = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.396078, 0.788235, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.839216, 0.752941, 0.752941, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Main menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+
+[node name="label" type="Label" parent="TextureRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -397.0
+margin_top = 22.0
+margin_right = 406.0
+margin_bottom = 127.0
+custom_colors/font_color = Color( 0.227451, 0.054902, 0.054902, 1 )
+custom_colors/font_outline_modulate = Color( 0.933333, 0.862745, 0.862745, 1 )
+custom_colors/font_color_shadow = Color( 0.137255, 0.0941176, 0.0941176, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 5 )
+text = "Math Game"
+align = 1
+
+[node name="start" type="Button" parent="TextureRect"]
+margin_left = 386.5
+margin_top = 181.5
+margin_right = 637.5
+margin_bottom = 251.5
+rect_min_size = Vector2( 25, 70 )
+custom_constants/hseparation = 60
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 1 )
+text = "START"
+
+[node name="Exit" type="Button" parent="TextureRect"]
+margin_left = 391.0
+margin_top = 315.0
+margin_right = 642.0
+margin_bottom = 385.0
+rect_min_size = Vector2( 25, 70 )
+custom_constants/hseparation = 60
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 1 )
+text = "EXIT"
+
+[connection signal="pressed" from="TextureRect/start" to="." method="_button_pressed"]
+[connection signal="pressed" from="TextureRect/Exit" to="." method="_on_Exit_pressed"]

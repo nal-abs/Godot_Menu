@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckjimn6fgi0pi"]
+
+[ext_resource type="Script" path="res://marksheet.gd" id="1_ksakl"]
+[ext_resource type="Texture2D" uid="uid://nm5x2um5uyo7" path="res://icon.svg" id="2_m5oqf"]
+
+[node name="Label" type="Label"]
+anchors_preset = -1
+anchor_left = -0.079
+anchor_top = 0.137
+anchor_right = -0.079
+anchor_bottom = 0.137
+offset_left = 91.008
+offset_top = -88.776
+offset_right = 324.008
+offset_bottom = 117.224
+text = "Hello world"
+script = ExtResource("1_ksakl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(612, 61)
+texture = ExtResource("2_m5oqf")
