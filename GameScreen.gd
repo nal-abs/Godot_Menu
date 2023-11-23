@@ -20,9 +20,8 @@ func _on_Pause_pressed():
 #	pass
 var toggle = true;
 
-func _on_Audio_pressed():
-	toggle = !toggle
-	if toggle:
+func _on_Audio_toggled(button_pressed):
+	if button_pressed:
 		$Audio.text = 'AudioOn'
 	else:
 		$Audio.text = 'AudioOff'
@@ -34,3 +33,5 @@ func _on_TextureButton_pressed():
 		$TextureButton.texture_normal = preload("res://dark.jpg")
 	else:
 		$TextureButton.texture_normal = preload("res://Tree.png")
+
+
