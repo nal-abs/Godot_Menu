@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprite.png" type="Texture" id=1]
+[ext_resource path="res://Sprite.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -513.0
+margin_top = -300.0
+margin_right = 513.0
+margin_bottom = 300.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 515.919, 318.614 )
+scale = Vector2( 1.11231, 1.0297 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 435, 1740.9, 135.813, 127.824 )
+region_filter_clip = true
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="Sprite"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -56.0
+margin_top = -63.0
+margin_right = 63.0
+margin_bottom = 47.0
+
+[connection signal="item_rect_changed" from="Sprite" to="Sprite" method="_on_Sprite_item_rect_changed"]
+[connection signal="pressed" from="Sprite/Button" to="Sprite" method="_on_Button_pressed"]
