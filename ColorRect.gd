@@ -6,4 +6,5 @@ func _on_Back_pressed():
 
 	
 func _on_Home_pressed():
-		get_tree().change_scene_to(load("res://Main menu.tscn"))
+	get_tree().change_scene_to(load("res://Main menu.tscn"))
+

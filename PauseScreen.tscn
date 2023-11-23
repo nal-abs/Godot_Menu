@@ -1,25 +1,41 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://roboto/Roboto-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ColorRect.gd" type="Script" id=2]
+[ext_resource path="res://sprite.png" type="Texture" id=3]
 
 [sub_resource type="ShaderMaterial" id=3]
 
-[sub_resource type="DynamicFont" id=1]
-size = 30
-font_data = ExtResource( 1 )
+[sub_resource type="TileSet" id=4]
+0/name = "sprite.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 576, 1728, 160, 160 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "sprite.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 150, 1590, 135, 120 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0784314, 0.396078, 0.788235, 1 )
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color( 0.839216, 0.752941, 0.752941, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxFlat" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -32,27 +48,32 @@ margin_bottom = 598.0
 color = Color( 0.882353, 0.784314, 0.870588, 1 )
 script = ExtResource( 2 )
 
-[node name="Back" type="Button" parent="ColorRect"]
-margin_left = 382.0
-margin_top = 303.0
-margin_right = 633.0
-margin_bottom = 373.0
-rect_min_size = Vector2( 25, 70 )
-custom_constants/hseparation = 60
-custom_fonts/font = SubResource( 1 )
-custom_styles/normal = SubResource( 2 )
-text = "Back"
+[node name="TileMap" type="TileMap" parent="."]
+z_index = 12
+tile_set = SubResource( 4 )
+format = 1
+tile_data = PoolIntArray( 131079, 0, 0, 327687, 1, 0 )
 
-[node name="Home" type="Button" parent="ColorRect"]
-margin_left = 383.0
-margin_top = 184.0
-margin_right = 634.0
-margin_bottom = 254.0
-rect_min_size = Vector2( 25, 70 )
-custom_constants/hseparation = 60
-custom_fonts/font = SubResource( 1 )
-custom_styles/normal = SubResource( 2 )
-text = "Home"
+[node name="Home" type="Button" parent="TileMap"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 0
+margin_left = 461.0
+margin_top = 141.0
+margin_right = 581.0
+margin_bottom = 252.0
+custom_colors/font_color = Color( 0.278431, 0.0588235, 0.0588235, 1 )
+custom_styles/pressed = SubResource( 5 )
+text = "hello"
 
-[connection signal="pressed" from="ColorRect/Back" to="ColorRect" method="_on_Back_pressed"]
-[connection signal="pressed" from="ColorRect/Home" to="ColorRect" method="_on_Home_pressed"]
+[node name="Back" type="Button" parent="TileMap"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 0
+margin_left = 477.0
+margin_top = 349.0
+margin_right = 597.0
+margin_bottom = 460.0
+custom_colors/font_color = Color( 0.278431, 0.0588235, 0.0588235, 1 )
+text = "hello"
+
+[connection signal="pressed" from="TileMap/Home" to="ColorRect" method="_on_Home_pressed"]
+[connection signal="pressed" from="TileMap/Back" to="ColorRect" method="_on_Home_pressed"]

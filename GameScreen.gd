@@ -13,8 +13,24 @@ func _texture_react():
 #func _process(delta):
 #	pass
 
-
-
-
 func _on_Pause_pressed():
 	get_tree().change_scene_to(load("res://PauseScreen.tscn"))
+
+
+#	pass
+var toggle = true;
+
+func _on_Audio_pressed():
+	toggle = !toggle
+	if toggle:
+		$Audio.text = 'AudioOn'
+	else:
+		$Audio.text = 'AudioOff'
+
+
+func _on_TextureButton_pressed():
+	toggle = !toggle
+	if toggle:
+		$TextureButton.texture_normal = preload("res://dark.jpg")
+	else:
+		$TextureButton.texture_normal = preload("res://Tree.png")
